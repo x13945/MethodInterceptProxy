@@ -1,9 +1,10 @@
 package com.mdit.example;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.mdit.example.test.Test;
 import com.mdit.library.proxy.CallbackFilter;
@@ -11,6 +12,7 @@ import com.mdit.library.proxy.Enhancer;
 import com.mdit.library.proxy.MethodInterceptor;
 import com.mdit.library.proxy.MethodProxy;
 import com.mdit.library.proxy.NoOp;
+
 
 import java.lang.reflect.Method;
 
@@ -63,8 +65,9 @@ public class MainActivity extends AppCompatActivity {
         enhancer.setCallbackFilter(new CallbackFilter() {
             @Override
             public int accept(Method method) {
-                if (method.getName().equals("toast2"))
+                if (method.getName().equals("toast2")) {
                     return 1;
+                }
                 return 0;
             }
         });
